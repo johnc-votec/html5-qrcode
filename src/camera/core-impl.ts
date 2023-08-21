@@ -160,7 +160,7 @@ class RenderedCameraImpl implements RenderedCamera {
 
     private createVideoElement(width: number): HTMLVideoElement {
         const videoElement = document.createElement("video");
-        videoElement.style.width = `${width}px`;
+        videoElement.style.width = `100%`;
         videoElement.style.display = "block";
         videoElement.muted = true;
         videoElement.setAttribute("muted", "true");
