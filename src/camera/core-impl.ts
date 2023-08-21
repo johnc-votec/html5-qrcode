@@ -337,4 +337,12 @@ export class CameraImpl implements Camera {
             constraints);
         return new CameraImpl(mediaStream);
     }
+
+    static async createFromStream(mediaStream?: MediaStream)
+        : Promise<Camera> {
+        if (!mediaStream) {
+            throw "Cannot create from undefined media stream!";
+        }
+        return new CameraImpl(mediaStream);
+    }
 }

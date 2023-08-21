@@ -360,6 +360,7 @@ export class Html5Qrcode {
         configuration: Html5QrcodeCameraScanConfig | undefined,
         qrCodeSuccessCallback: QrcodeSuccessCallback | undefined,
         qrCodeErrorCallback: QrcodeErrorCallback | undefined,
+        mediaStream: MediaStream | undefined
     ): Promise<null> {
 
         // Code will be consumed as javascript.
@@ -442,7 +443,7 @@ export class Html5Qrcode {
 
             // TODO(minhazav): Flatten this flow.
             CameraFactory.failIfNotSupported().then((factory) => {
-                factory.create(videoConstraints).then((camera) => {
+                factory.create(videoConstraints, mediaStream).then((camera) => {
                     return camera.render(
                         this.element!, cameraRenderingOptions, renderingCallbacks)
                         .then((renderedCamera) => {

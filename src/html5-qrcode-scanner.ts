@@ -831,7 +831,7 @@ export class Html5QrcodeScanner {
                 cameraId,
                 toHtml5QrcodeCameraScanConfig($this.config),
                 $this.qrCodeSuccessCallback!,
-                $this.qrCodeErrorCallback!)
+                $this.qrCodeErrorCallback!, undefined)
                 .then((_) => {
                     cameraActionStopButton.disabled = false;
                     cameraActionStopButton.style.display = "inline-block";
