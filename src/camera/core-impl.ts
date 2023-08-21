@@ -152,13 +152,13 @@ class RenderedCameraImpl implements RenderedCamera {
         this.mediaStream = mediaStream;
         this.callbacks = callbacks;
 
-        this.surface = this.createVideoElement(this.parentElement.clientWidth);
+        this.surface = this.createVideoElement();
 
         // Setup
         parentElement.append(this.surface);
     }
 
-    private createVideoElement(width: number): HTMLVideoElement {
+    private createVideoElement(): HTMLVideoElement {
         const videoElement = document.createElement("video");
         videoElement.style.width = `100%`;
         videoElement.style.display = "block";
